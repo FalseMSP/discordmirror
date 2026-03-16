@@ -15,8 +15,8 @@ Dependencies:
 Quick start:
     1. cp .env.example .env  — fill in credentials
     2. If you want WebSub (recommended):
-         expose port 8080 publicly, e.g. with ngrok:
-           ngrok http 8080
+         expose port 8081 publicly, e.g. with ngrok:
+           ngrok http 8081
          then set WEBSUB_PUBLIC_URL=https://<your-ngrok-id>.ngrok-free.app
     3. python chat_mirror.py
 """
@@ -83,7 +83,7 @@ YT_POLL_INTERVAL      = int(os.getenv("YT_POLL_INTERVAL", "8"))
 # WebSub  (leave WEBSUB_PUBLIC_URL blank to fall back to polling)
 WEBSUB_PUBLIC_URL     = os.getenv("WEBSUB_PUBLIC_URL", "").rstrip("/")
 WEBSUB_SECRET         = os.getenv("WEBSUB_SECRET", "change-me-please")
-WEBSUB_PORT           = int(os.getenv("WEBSUB_PORT", "8080"))
+WEBSUB_PORT           = int(os.getenv("WEBSUB_PORT", "8081"))
 WEBSUB_HUB            = "https://pubsubhubbub.appspot.com/"
 WEBSUB_LEASE_SECONDS  = 86400   # re-subscribe every 24 h
 
